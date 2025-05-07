@@ -3,7 +3,9 @@ Group 5 - Zack Carlstrom, Daniel Evarone, Celia Cameron, Owen Brown, Alex Burde
 
 ## Dataset
 
+## Naive Bayes
 
+Implementation contained in (file name).
 
 ## BERT
 
@@ -58,3 +60,15 @@ Implementation contained in (file name).
 **Hyperparameters**
 
 **Other notes**
+
+
+### Contributions
+- Zack Carlstrom:  BERT, (Lead); Data Exploration and Manipulation, (Lead); Naive Bayes, *Contributor*; Written Deliverables, *Contributor*
+
+- Daniel Evarone: LSTM, *Lead*; Error Analysis, *Lead*
+
+- Celia Cameron: Naive Bayes, *Lead*; Presentation, *Lead*; Written Deliverables, *Contributor*
+
+- Owen Brown: Presentation, *Contributor*; Written Deliverables, *Contributor*
+
+- Alex Burde: Presentation, *Contributor*
