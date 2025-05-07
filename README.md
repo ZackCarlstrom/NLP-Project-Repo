@@ -24,15 +24,32 @@ Libraries Needed for Data Exploration Notebook:
 - Pandas version: 2.2.3
 - JSON & CSV standard modules
 
-
-
 ## Naive Bayes
 
-Implementation contained in (file name).
+Implementation contained in **Naive_Bayes_Yelp.ipynb**.
+
+**Libraries**
+
+- Pandas version: 2.2.2
+- Scikit-learn version: 1.4.2
+
+**Hyperparameters**
+
+- test_size = 0.2
+- random_state = 40
+- stop_words = "english"
+- max_features = 20000
+
+**Results**
+- 2 regions: average precision of 0.50, average recall of 0.50, average F1 of 0.50
+- 4 regions: average precision of 0.50, average recall of 0.49, average F1 of 0.49
+- 13 states: average precision of 0.56, average recall of 0.11, average F1 of 0.09
+
+A multinomial Naive Bayes classifier was developed and used on the processed data. This was to be used as a baseline to explore the validity of researching this problem. As a fairly simple model, it did not perform very well, with performance getting worse the more complexity was introducted. It was clearly very vulnerable to the varieties in the data and was not suitable to account for the complexities of the problem.
 
 ## BERT
 
-Implementation contained in (file name).
+Implementation contained in **BERT Pretraining & Evaluation.ipynb**.
 
 **Libraries**
 
@@ -44,46 +61,113 @@ Implementation contained in (file name).
 - Pandas version: 1.4.4
 - NumPy version: 1.21.5
 
-
 **Hyperparameters**
-    
-    output_dir="./results",
-    eval_strategy="steps",   
-    eval_steps=250,
-    load_best_model_at_end=True,
-    metric_for_best_model="f1",
-    num_train_epochs=5,
-    learning_rate=2e-5,
-    per_device_train_batch_size=16,
-    per_device_eval_batch_size=16,
-    weight_decay=0.01,
-    save_total_limit=1,
-    logging_dir="./logs",
-    logging_steps=250,
-    fp16=torch.cuda.is_available(),
-    report_to="none"
 
-**Final Results**
+- output_dir="./results",
+- eval_strategy="steps",
+- eval_steps=250,
+- load_best_model_at_end=True,
+- metric_for_best_model="f1",
+- num_train_epochs=5,
+- learning_rate=2e-5,
+- per_device_train_batch_size=16,per_device_eval_batch_size=16,
+- weight_decay=0.01,
+- save_total_limit=1,
+- logging_dir="./logs",
+- logging_steps=250,
+- fp16=torch.cuda.is_available(),
+- report_to="none"
 
-**Other notes**
+**Results**
+- 4 regions: average precision of 0.51, average recall of 0.50, average F1 of 0.51
+- 4 regions w/prompting: average precision of 0.51, average recall of 0.50, average F1 of 0.50
+- 13 states: average precision of 0.38, average recall of 0.36, average F1 of 0.36
+
+INSERT DESCRIPTION OF RESULTS HERE
 
 ### BERT Resources:
 https://medium.com/@heyamit10/fine-tuning-bert-for-classification-a-practical-guide-b8c1c56f252c
 https://huggingface.co/docs/transformers/en/index
 https://huggingface.co/docs/datasets/en/index
 
-## LSTM
+## RoBERTa
 
-Implementation contained in (file name). 
+Implementation contained in **BERT Pretraining & Evaluation.ipynb**.
 
 **Libraries**
 
-- 
+- Transformers version: 4.51.1
+- Datasets version: 3.5.0
+- PyTorch version: 2.1.0+cu118
+- scikit-learn version: 1.3.2
+- Evaluate version: 0.4.3
+- Pandas version: 2.2.3
+- NumPy version: 1.26.4
 
 **Hyperparameters**
 
-**Other notes**
+- output_dir="./results-roberta-base",
+- eval_strategy="steps",
+- eval_steps=250,
+- load_best_model_at_end=True,
+- metric_for_best_model="f1",
+- num_train_epochs=5,
+- learning_rate=2e-5,
+- per_device_train_batch_size=16,
+- per_device_eval_batch_size=16,
+- weight_decay=0.01,
+- save_total_limit=1,
+- logging_dir="./logs-roberta-base",
+- logging_steps=250,
+- fp16=torch.cuda.is_available(),
+- report_to="none"
 
+**Results**
+- 4 regions: average precision of 0.51, average recall of 0.50, average F1 of 0.50
+- 4 regions w/prompting: average precision of 0.51, average recall of 0.50, average F1 of 0.50
+- 13 states: average precision of 0.41, average recall of 0.35, average F1 of 0.36
+
+INSERT DESCRIPTION OF RESULTS HERE
+
+## LSTM
+
+**Libraries**
+
+- Python: 3.10.11
+- Torch: 2.1.0+cu118
+- NumPy: 1.26.4
+- Pandas: 2.2.3
+- scikit-learn: 1.3.2
+- NLTK: 3.9.1
+- Matplotlib: 3.10.0
+
+**Hyperparameters**
+
+These are the hyperparameters for the highest performing model, the 200k samples, replacement, flags, 5 epochs model with an average F1 of 0.29.
+
+- lstm_hidden_size=50
+- num_lstm_layers=1
+- bidirectional=True
+- learning_rate=0.001
+- batch_size=128
+- epochs=5
+- tokenized=False
+- n_samples=100000 (reviews per state)
+- num_labels=13
+- test_size=0.2
+
+**Results**
+
+All of these were tested with 13 states, instead experimenting with the number of samples and modifications like tokenizing, removing stopwords, and flagging.
+
+- 50k samples, tokenized: average precision of 0.32, average recall of 0.28, average F1 of 0.27
+- 50k samples: average precision of 0.29, average recall of 0.24, average F1 of 0.24
+- 50k samples, tokenized, stopwords removed: average precision of 0.29, average recall of 0.25, average F1 of 0.25
+- 200k samples, replacement: average precision of 0.33, average recall of 0.29, average F1 of 0.28
+- 200k samples, replacement, flags, 2 epochs: average precision of 0.30, average recall of 0.27, average F1 of 0.27
+- 200k samples, replacement, flags, 5 epochs: average precision of 0.31, average recall of 0.29, average F1 of 0.29
+
+INSERT DESCRIPTION OF RESULTS HERE
 
 ### Contributions
 - Zack Carlstrom:  BERT, (Lead); Data Exploration and Manipulation, (Lead); Naive Bayes, *Contributor*; Written Deliverables, *Contributor*
