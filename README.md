@@ -83,7 +83,7 @@ Implementation contained in **BERT Pretraining & Evaluation.ipynb**.
 - 4 regions w/prompting: average precision of 0.51, average recall of 0.50, average F1 of 0.50
 - 13 states: average precision of 0.38, average recall of 0.36, average F1 of 0.36
 
-INSERT DESCRIPTION OF RESULTS HERE
+Fine-tuning the BERT-base-uncased model showed minimal improvement over Bayes in the 4 region tasks, but showed a large improvement in F1-score for classifying the 13 states. Prompting in the dataset was used in one trial, but seemed to have no significant impact, getting a F1-score 0.01 lower than the same task without prompting. Compared to the LSTM models, the fine-tuned BERT model had a slightly higher average F1-score.
 
 ### BERT Resources:
 https://medium.com/@heyamit10/fine-tuning-bert-for-classification-a-practical-guide-b8c1c56f252c
@@ -127,7 +127,7 @@ Implementation contained in **BERT Pretraining & Evaluation.ipynb**.
 - 4 regions w/prompting: average precision of 0.51, average recall of 0.50, average F1 of 0.50
 - 13 states: average precision of 0.41, average recall of 0.35, average F1 of 0.36
 
-INSERT DESCRIPTION OF RESULTS HERE
+Fine-tuning the RoBERTa-base model showed similar results to the fine-tuned BERT-base-uncased model. There was once again minimal improvement over Bayes in the 4 region tasks, but the model showed a large improvement in F1-score for classifying the 13 states. Fine-tuning with hard prompting also showed no change in overall performance. The RoBERTa fine-tuned model still slightly out performed the LSTM models with a slightly higher F1-score. For training time, RoBERTa took slightly longer than the BERT models, but only by a slim margin.
 
 ## LSTM
 
@@ -150,7 +150,7 @@ These are the hyperparameters for the highest performing model, the 200k samples
 - bidirectional=True
 - learning_rate=0.001
 - batch_size=128
-- epochs=5
+- epochs=10
 - tokenized=False
 - n_samples=100000 (reviews per state)
 - num_labels=13
@@ -166,8 +166,11 @@ All of these were tested with 13 states, instead experimenting with the number o
 - 200k samples, replacement: average precision of 0.33, average recall of 0.29, average F1 of 0.28
 - 200k samples, replacement, flags, 2 epochs: average precision of 0.30, average recall of 0.27, average F1 of 0.27
 - 200k samples, replacement, flags, 5 epochs: average precision of 0.31, average recall of 0.29, average F1 of 0.29
+- 100k samples per state, replacement, 10 epochs: average precision of 0.34, average recall 0.32, average F1 of 0.31
 
-INSERT DESCRIPTION OF RESULTS HERE
+Louisiana had the highest F1 score overall across all testing, so we investigated the reviews further. An analysis of the top 200 correctly classified reviews found that a majority of them contained “New Orleans,” so an idea was hatched to create a dictionary of the 10 largest or most popular cities in each state in the dataset, as well as 4 landmarks in that state. This seemed to improve the results slightly, enough to leave the flags included for future tests. More tests were run with different ways of samping from the dataset, including pulling 50,000 reviews from each state or using up to 200,000 reviews from each state with replacement. These methods produced balanced training and test sets, where the previous iterations used the entire dataset that was unbalanced. We experimented with different epoch sizes, with 2 not learning enough and 50 overfitting too much to be helpful. While 5 was enough to get a good fit, we improved the model by 2% F1 score by increasing to 10 epochs. We found the best results for accuracy and runtime were 50k to 100k reviews per state with 5 to 10 epochs. Increasing these parameters did not increase the F1 score in a meaningful way.
+
+Overall, we found that the models struggled with geographical classification for Yelp reviews even through training and other optimization methods. This may be due to written language not being conducive to inflection or the probability that Yelp reviews are not necessarily authored by residents of those states or cities.
 
 ### Contributions
 - Zack Carlstrom:  BERT, (Lead); Data Exploration and Manipulation, (Lead); Naive Bayes, *Contributor*; Written Deliverables, *Contributor*
