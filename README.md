@@ -131,6 +131,8 @@ Fine-tuning the RoBERTa-base model showed similar results to the fine-tuned BERT
 
 ## LSTM
 
+Implementation contained in **Final_Project_Yelp v2.ipynb** and **Final_Project_Yelp v2 Flags.ipynb**. Any of the tests below with flags are in the Flag specific file.
+
 **Libraries**
 
 - Python: 3.10.11
@@ -173,7 +175,7 @@ Louisiana had the highest F1 score overall across all testing, so we investigate
 Overall, we found that the models struggled with geographical classification for Yelp reviews even through training and other optimization methods. This may be due to written language not being conducive to inflection or the probability that Yelp reviews are not necessarily authored by residents of those states or cities.
 
 ### Contributions
-- Zack Carlstrom:  BERT, (Lead); Data Exploration and Manipulation, (Lead); Naive Bayes, *Contributor*; Written Deliverables, *Contributor*
+- Zack Carlstrom:  BERT, *Lead*; RoBERTa, *Lead*; Data Exploration and Manipulation, *Lead*; Written Deliverables, *Contributor*
 
 - Daniel Evarone: LSTM, *Lead*; Error Analysis, *Lead*
 
