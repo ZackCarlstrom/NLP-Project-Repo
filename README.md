@@ -1,7 +1,7 @@
 # Yelp Geolocation Project Repository
 Group 5 - Zack Carlstrom, Daniel Evarone, Celia Cameron, Owen Brown, Alex Burde
 
-## Dataset
+## Dataset & Data Exploration
 
 The dataset we used comes from the Yelp Open Dataset: https://business.yelp.com/data/resources/open-dataset/
 
