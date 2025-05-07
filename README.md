@@ -47,6 +47,13 @@ Implementation contained in **Naive_Bayes_Yelp.ipynb**.
 
 A multinomial Naive Bayes classifier was developed and used on the processed data. This was to be used as a baseline to explore the validity of researching this problem. As a fairly simple model, it did not perform very well, with performance getting worse the more complexity was introducted. It was clearly very vulnerable to the varieties in the data and was not suitable to account for the complexities of the problem.
 
+### Naive Bayes Resources:
+
+https://scikit-learn.org/stable/modules/naive_bayes.html#multinomial-naive-bayes
+
+https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html
+
+
 ## BERT
 
 Implementation contained in **BERT Pretraining & Evaluation.ipynb**. After fine-tuning and evaluation, each model (at best validation f1-score) and tokenizer is saved under local directories specified in the notebook.
@@ -87,7 +94,9 @@ Fine-tuning the BERT-base-uncased model showed minimal improvement over Bayes in
 
 ### BERT Resources:
 https://medium.com/@heyamit10/fine-tuning-bert-for-classification-a-practical-guide-b8c1c56f252c
+
 https://huggingface.co/docs/transformers/en/index
+
 https://huggingface.co/docs/datasets/en/index
 
 ## RoBERTa
