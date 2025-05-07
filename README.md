@@ -19,7 +19,7 @@ Where to use these Datasets:
 Dataset Notes:
 - When using these datasets, you will have to update the code to contain the location of the compressed csv files in your file system. 
 
-Libraries Needed:
+Libraries Needed for Data Exploration Notebook:
 - Altair version: 5.5.0
 - Pandas version: 2.2.3
 - JSON & CSV standard modules
