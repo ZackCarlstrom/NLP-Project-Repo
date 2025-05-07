@@ -56,7 +56,9 @@ https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.tex
 
 ## BERT
 
-Implementation contained in **BERT Pretraining & Evaluation.ipynb**. After fine-tuning and evaluation, each model (at best validation f1-score) and tokenizer is saved under local directories specified in the notebook.
+Implementation contained in **BERT Pretraining & Evaluation.ipynb**. 
+
+- After fine-tuning and evaluation, each model (at best validation f1-score) and tokenizer is saved under local directories specified in the notebook.
 
 **Libraries**
 
@@ -101,7 +103,9 @@ https://huggingface.co/docs/datasets/en/index
 
 ## RoBERTa
 
-Implementation contained in **RoBERTa Pretraining & Evaluation.ipynb**. After fine-tuning and evaluation, each model (at best validation f1-score) and tokenizer is saved under local directories specified in the notebook.
+Implementation contained in **RoBERTa Pretraining & Evaluation.ipynb**. 
+
+- After fine-tuning and evaluation, each model (at best validation f1-score) and tokenizer is saved under local directories specified in the notebook.
 
 **Libraries**
 
