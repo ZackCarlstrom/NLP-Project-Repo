@@ -7,7 +7,7 @@ The dataset we used comes from the Yelp Open Dataset: https://business.yelp.com/
 
 If you’d like to go through the data processing and exploration file, you can download the JSON data by following the link above. 
 
-The following datasets filtered data sets were used in the project:
+The following filtered datasets were used in the project:
 - Full Filtered Dataset (review, state, region): https://drive.google.com/file/d/1NfMHyc4aGIHF1h-svRQDAbVkK_q3_-do/view?usp=sharing
 - Balanced Region Dataset (10k per region w/ reviews): https://drive.google.com/file/d/1qoy4TU2nleo8Z0AW4wwbrxA2l08u7c5Z/view?usp=sharing
 - Balanced State Dataset (5k per state w/ reviews): https://drive.google.com/file/d/1_49LMdYTZNSSJH_0i8WyUGk0jJiZOmfi/view?usp=sharing
