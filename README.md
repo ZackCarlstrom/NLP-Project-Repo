@@ -3,6 +3,29 @@ Group 5 - Zack Carlstrom, Daniel Evarone, Celia Cameron, Owen Brown, Alex Burde
 
 ## Dataset
 
+The dataset we used comes from the Yelp Open Dataset: https://business.yelp.com/data/resources/open-dataset/
+
+If you’d like to go through the data processing and exploration file, you can download the JSON data by following the link above. 
+
+The following datasets filtered data sets were used in the project:
+-Full Filtered Dataset (review, state, region): https://drive.google.com/file/d/1NfMHyc4aGIHF1h-svRQDAbVkK_q3_-do/view?usp=sharing
+-Balanced Region Dataset (10k per region w/ reviews): https://drive.google.com/file/d/1qoy4TU2nleo8Z0AW4wwbrxA2l08u7c5Z/view?usp=sharing
+-Balanced State Dataset (5k per state w/ reviews): https://drive.google.com/file/d/1_49LMdYTZNSSJH_0i8WyUGk0jJiZOmfi/view?usp=sharing
+
+Where to use these Datasets: 
+-The Full Filtered Dataset is used in the BERT, RoBERTa, and LSTM models for training and testing. 
+-The balanced region and state datasets are used in the Naive Bayes model due to hardware limitations for certain team members, which prevented them from loading the full filtered dataset.
+
+Dataset Notes:
+-When using these datasets, you will have to update the code to contain the location of the compressed csv files in your file system. 
+
+Libraries Needed:
+-Altair version: 5.5.0
+-Pandas version: 2.2.3
+-JSON & CSV standard modules
+
+
+
 ## Naive Bayes
 
 Implementation contained in (file name).
