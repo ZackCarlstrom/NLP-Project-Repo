@@ -190,7 +190,7 @@ Overall, we found that the models struggled with geographical classification for
 ### Contributions
 - Zack Carlstrom:  BERT, *Lead*; RoBERTa, *Lead*; Data Exploration and Manipulation, *Lead*; Written Deliverables, *Contributor*
 
-- Daniel Evarone: LSTM, *Lead*; Error Analysis, *Lead*
+- Daniel Evarone: LSTM, *Lead*; Error Analysis, *Lead*; Written Deliverables, Contributor
 
 - Celia Cameron: Naive Bayes, *Lead*; Presentation, *Lead*; Written Deliverables, *Contributor*
 
